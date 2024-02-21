@@ -17,8 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
-Auth::routes(['verified' => 1]);
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
+Route::resource('home', App\Http\Controllers\HomeController::class);
+Route::resource('users', App\Http\Controllers\Auth\UserController::class);
+Route::resource('shops', App\Http\Controllers\Frontend\ShopController::class);
+Route::resource('categories', App\Http\Controllers\Frontend\CategoryController::class);
+Route::resource('products', App\Http\Controllers\Frontend\ProductController::class);

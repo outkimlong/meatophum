@@ -2,7 +2,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            Dashboard
+            Users
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
