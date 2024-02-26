@@ -43,9 +43,7 @@
                     </div>
                 </div>
             </form>
-            
         </div>
-        
     </div>
     @include('layouts.footer-script')
 </body>

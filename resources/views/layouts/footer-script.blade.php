@@ -10,6 +10,8 @@
 <script src="{{ asset('dist/js/adminlte.min.js') }}"></script>
 <script src="{{ asset('dist/js/demo.js') }}"></script>
 <script src="{{ asset('plugins/iCheck/icheck.min.js') }}"></script>
+<script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>  
+
 <script>
     $(function () {
         $('input').iCheck({
@@ -17,5 +19,6 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%'
         });
+        $('.dataTable').DataTable()
     });
 </script>
