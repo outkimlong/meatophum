@@ -22,7 +22,7 @@
                         <li>
                             <ul class="menu">
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ route('setting.updateLocale',['langCode'=> 'kh']) }}">
                                         <div class="pull-left">
                                             <img src="{{'assets/flags/kh.png'}}" alt="flag-1">
                                         </div>
@@ -35,7 +35,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{ route('setting.updateLocale',['langCode'=> 'en']) }}">
                                         <div class="pull-left">
                                             <img src="{{'assets/flags/en.png'}}" alt="flag-2">
                                         </div>

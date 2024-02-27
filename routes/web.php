@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\App;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,6 @@ Route::resource('users', App\Http\Controllers\Auth\UserController::class);
 Route::resource('shops', App\Http\Controllers\Frontend\ShopController::class);
 Route::resource('categories', App\Http\Controllers\Frontend\CategoryController::class);
 Route::resource('products', App\Http\Controllers\Frontend\ProductController::class);
+
+
+Route::GET('/setting/updateLocale/{langCode}', [App\Http\Controllers\HomeController::class, 'languageSwitched'])->name('setting.updateLocale');

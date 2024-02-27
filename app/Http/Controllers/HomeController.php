@@ -25,4 +25,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function languageSwitched($langCode) 
+    {
+        session(['language' => $langCode]);
+        return redirect()->back()->with(['language_switched' => $langCode]);
+
+    }
 }
