@@ -1,13 +1,10 @@
 @extends('layouts.app', ['title' => 'Dashboard'])
 @section('content')
     <section class="content-header">
-        <h1>
-            Users
-            <small>Control panel</small>
-        </h1>
+        <h4>{{ __('admin.user') }}</h4>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> {{ __('admin.home') }}</a></li>
+            <li class="active">{{ __('admin.user') }}</li>
         </ol>
     </section>
     <section class="content">
@@ -16,7 +13,7 @@
                 <div class="box">
                     <div class="box-header">
                         <a class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-create">
-                            Add New
+                            {{ __('admin.add_user') }}
                         </a>
                     </div>
                     <div class="box-body">
@@ -38,9 +35,9 @@
                                         <td>{{ $item->email }}</td>
                                         <td class="text-center">
                                             @if($item->verified)
-                                                <span class="label-primary mr-1" style="border-radius: 50%;width: 8px;height: 8px; display: inline-block;"></span> {{__('messages.active')}}
+                                                <span class="label-primary mr-1" style="border-radius: 50%;width: 8px;height: 8px; display: inline-block;"></span> {{__('admin.active')}}
                                             @else
-                                                <span class="label-danger mr-1" style="border-radius: 50%;width: 8px;height: 8px; display: inline-block;"></span> {{__('messages.deactive')}}
+                                                <span class="label-danger mr-1" style="border-radius: 50%;width: 8px;height: 8px; display: inline-block;"></span> {{__('admin.deactive')}}
                                             @endif
                                         </td>
                                         <td>

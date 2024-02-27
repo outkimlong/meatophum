@@ -1,24 +1,28 @@
 <div class="modal fade" id="modal-create">
     <div class="modal-dialog">
-        <form action="{{ url('users')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('shops')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="modal-title">{{__('admin.add_user')}}</h5>
+                    <h5 class="modal-title">{{__('Add Shop')}}</h5>
                 </div>
                 <div class="modal-body form-horizontal">
                     <div class="box-body">
-                        <div class="form-group has-feedback">
-                            <label for="name" class="col-sm-2 control-label">Full Name</label>
+
+
+                        <div class="form-group">
+                            <label for="name" class="col-sm-2 control-label">Name</label>
                             <div class="col-sm-10">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
-                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                {{-- <span class="glyphicon glyphicon-user form-control-feedback"></span> --}}
                             </div>
                         </div>
-                        <div class="form-group has-feedback">
+
+
+                        {{-- <div class="form-group has-feedback">
                             <label for="email" class="col-sm-2 control-label">Email</label>
                             <div class="col-sm-10">
                                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
@@ -47,7 +51,7 @@
                                     <option value="1">{{__('admin.active')}}</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
                 <div class="modal-footer">

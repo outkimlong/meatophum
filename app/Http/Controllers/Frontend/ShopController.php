@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Shop;
 
 class ShopController extends Controller
 {
 
     public function index()
     {
-        return view('frontend.shops.index');
+        $data = Shop::orderBy('id', 'desc')->paginate(10);
+        return view('frontend.shops.index', compact('data'));
     }
 
     public function create()

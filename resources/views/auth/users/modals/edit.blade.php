@@ -7,7 +7,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="modal-title">Update User</h5>
+                    <h5 class="modal-title">{{__('admin.update_user')}}</h5>
                 </div>
                 <div class="modal-body form-horizontal">
                     <div class="box-body">
@@ -43,15 +43,15 @@
                             <label for="verified" class="col-sm-2 control-label">Verified</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="verified">
-                                    <option value="0" {{ $item->verified == 0 ? 'selected' : '' }}>{{__('messages.deactive')}}</option>
-                                    <option value="1" {{ $item->verified == 1 ? 'selected' : '' }}>{{__('messages.active')}}</option>
+                                    <option value="0" {{ $item->verified == 0 ? 'selected' : '' }}>{{__('admin.deactive')}}</option>
+                                    <option value="1" {{ $item->verified == 1 ? 'selected' : '' }}>{{__('admin.active')}}</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                    <button type="submit" class="btn btn-primary btn-sm">{{__('admin.btn_edit')}}</button>
                 </div>
             </div>
         </form>
