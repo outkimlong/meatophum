@@ -40,9 +40,9 @@
                                         <td>{{ $item->created_at }}</td>
                                         <td class="text-center">
                                             @if($item->active)
-                                                <span class="label-primary mr-1" style="border-radius: 50%;width: 8px;height: 8px; display: inline-block;"></span> {{__('admin.active')}}
+                                                <span class="label-primary mr-1" style="border-radius: 50%; width: 8px; height: 8px; display: inline-block;"></span> {{__('admin.active')}}
                                             @else
-                                                <span class="label-danger mr-1" style="border-radius: 50%;width: 8px;height: 8px; display: inline-block;"></span> {{__('admin.deactive')}}
+                                                <span class="label-danger mr-1" style="border-radius: 50%; width: 8px; height: 8px; display: inline-block;"></span> {{__('admin.deactive')}}
                                             @endif
                                         </td>
                                         <td>
@@ -54,9 +54,9 @@
                                     </tr>
                                 @endforeach
                             </tbody>
-                            
                         </table>
                     </div>
+                    
                 </div>
             </div>
         </div>

@@ -11,8 +11,6 @@
                 </div>
                 <div class="modal-body form-horizontal">
                     <div class="box-body">
-
-
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">{{__('Name')}}</label>
                             <div class="col-sm-10">
@@ -39,6 +37,13 @@
                             </div>
                         </div>
                         
+                        <div class="form-group">
+                            <label for="image" class="col-sm-2 control-label">{{__('Image')}}</label>
+                            <div class="col-sm-10">
+                                <input type="file" id="input-file-now" class="dropify" />
+                            </div>
+                        </div>
+
                         <div class="form-group has-feedback">
                             <label for="active" class="col-sm-2 control-label">{{__('Active')}}</label>
                             <div class="col-sm-10">

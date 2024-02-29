@@ -15,8 +15,8 @@
 <script src="{{ asset('plugins/input-mask/jquery.inputmask.date.extensions.js') }}"></script>
 <script src="{{ asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 
+<script src="{{ asset('dist/js/dropify.min.js')}}"></script>
 <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>  
-
 <script>
     $(function () {
         $('input').iCheck({
@@ -26,5 +26,6 @@
         });
         $('.dataTable').DataTable()
     });
-    $('[data-mask]').inputmask()
+    $('[data-mask]').inputmask();
+    $('.dropify').dropify();
 </script>
