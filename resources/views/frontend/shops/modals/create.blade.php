@@ -14,44 +14,40 @@
 
 
                         <div class="form-group">
-                            <label for="name" class="col-sm-2 control-label">Name</label>
+                            <label for="name" class="col-sm-2 control-label">{{__('Name')}}</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
-                                {{-- <span class="glyphicon glyphicon-user form-control-feedback"></span> --}}
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" >
                             </div>
                         </div>
-
-
-                        {{-- <div class="form-group has-feedback">
-                            <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="form-group">
+                            <label for="phone" class="col-sm-2 control-label">{{__('Phone')}}</label>
                             <div class="col-sm-10">
-                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" autocomplete="email">
-                                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                                <input type="text" class="form-control @error('phone') is-invalid @enderror" data-inputmask='"mask": "(999) 999-9999"' data-mask>
                             </div>
                         </div>
+                        
+                        <div class="form-group">
+                            <label for="address" class="col-sm-2 control-label">{{__('Address')}}</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control @error('address') is-invalid @enderror" rows="2" value="{{ old('address') }}"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="remark" class="col-sm-2 control-label">{{__('Remark')}}</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control @error('remark') is-invalid @enderror" rows="2" value="{{ old('remark') }}"></textarea>
+                            </div>
+                        </div>
+                        
                         <div class="form-group has-feedback">
-                            <label for="password" class="col-sm-2 control-label">Password</label>
+                            <label for="active" class="col-sm-2 control-label">{{__('Active')}}</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password">
-                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label for="confirm-password" class="col-sm-2 control-label">Retype Password</label>
-                            <div class="col-sm-10">
-                                <input type="password" class="form-control" name="confirm-password">
-                                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <label for="verified" class="col-sm-2 control-label">Verified</label>
-                            <div class="col-sm-10">
-                                <select class="form-control" name="verified">
+                                <select class="form-control" name="active">
                                     <option value="0">{{__('admin.deactive')}}</option>
                                     <option value="1">{{__('admin.active')}}</option>
                                 </select>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -61,4 +57,3 @@
         </form>
     </div>
 </div>
-
