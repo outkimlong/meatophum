@@ -34,6 +34,7 @@
                                 @foreach ($data as $index => $item)
                                     <tr>
                                         <td>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
+                                        <td>{{ $item->image }}</td>
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->phone }}</td>
                                         <td>{{ $item->address }}</td>
@@ -49,14 +50,13 @@
                                             <a class="btn btn-social-icon btn-warning btn-xs" data-toggle="modal" data-target="#modal-edit{{ $item->id }}"><i class="fa fa-edit"></i></a>
                                             <a class="btn btn-social-icon btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete{{ $item->id }}"><i class="fa fa-trash-o"></i></a>
                                         </td>
-                                        {{-- @include('auth.users.modals.edit')
-                                        @include('auth.users.modals.delete') --}}
+                                        @include('frontend.shops.modals.edit')
+                                        @include('frontend.shops.modals.delete')
                                     </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
-                    
                 </div>
             </div>
         </div>
