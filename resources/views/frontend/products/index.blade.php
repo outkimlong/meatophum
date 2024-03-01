@@ -32,13 +32,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($data as $index => $item)
+                            @foreach ($data as $index => $item)
                             <tr>
                                 <td>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
                                 <td>{{ $item->image }}</td>
+                                <td>{{ $item->category->name }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->phone }}</td>
-                                <td>{{ $item->address }}</td>
+                                <td>{{ $item->price }}</td>
                                 <td>{{ $item->created_at }}</td>
                                 <td class="text-center">
                                     @if($item->active)
@@ -51,10 +51,10 @@
                                     <a class="btn btn-social-icon btn-warning btn-xs" data-toggle="modal" data-target="#modal-edit{{ $item->id }}"><i class="fa fa-edit"></i></a>
                                     <a class="btn btn-social-icon btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete{{ $item->id }}"><i class="fa fa-trash-o"></i></a>
                                 </td>
-                                @include('frontend.shops.modals.edit')
-                                @include('frontend.shops.modals.delete')
+                                @include('frontend.products.modals.edit')
+                                @include('frontend.products.modals.delete')
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -62,4 +62,5 @@
         </div>
     </div>
 </section>
+@include('frontend.products.modals.create')
 @endsection

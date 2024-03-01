@@ -37,10 +37,9 @@ class ShopController extends Controller
         {
             return response(['errors'=>$validator->errors()->all()], 422);
         }
-
+        $shop = new Shop();
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('shops', 'public');
-            $shop = new Shop();
             $shop->name = $request->get('name');
             $shop->remark = $request->get('remark');
             $shop->address = $request->get('address');
@@ -85,7 +84,7 @@ class ShopController extends Controller
 
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('shops', 'public');
-            $shop->image_url = $path;
+            $shop->image = $path;
 
             // If there is an old image, delete it
             if ($shop->image) {

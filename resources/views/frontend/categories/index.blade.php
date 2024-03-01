@@ -1,4 +1,3 @@
-
 @extends('layouts.app', ['title' => 'Dashboard'])
 @section('content')
 
@@ -30,29 +29,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {{-- @foreach ($data as $index => $item)
+                            @foreach ($data as $index => $item)
                             <tr>
                                 <td>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
-                                <td>{{ $item->image }}</td>
                                 <td>{{ $item->name }}</td>
-                                <td>{{ $item->phone }}</td>
-                                <td>{{ $item->address }}</td>
                                 <td>{{ $item->created_at }}</td>
                                 <td class="text-center">
                                     @if($item->active)
-                                    <span class="label-primary mr-1" style="border-radius: 50%; width: 8px; height: 8px; display: inline-block;"></span> {{__('admin.active')}}
+                                        <span class="label-primary mr-1" style="border-radius: 50%; width: 8px; height: 8px; display: inline-block;"></span> {{__('admin.active')}}
                                     @else
-                                    <span class="label-danger mr-1" style="border-radius: 50%; width: 8px; height: 8px; display: inline-block;"></span> {{__('admin.deactive')}}
+                                        <span class="label-danger mr-1" style="border-radius: 50%; width: 8px; height: 8px; display: inline-block;"></span> {{__('admin.deactive')}}
                                     @endif
                                 </td>
                                 <td>
                                     <a class="btn btn-social-icon btn-warning btn-xs" data-toggle="modal" data-target="#modal-edit{{ $item->id }}"><i class="fa fa-edit"></i></a>
                                     <a class="btn btn-social-icon btn-danger btn-xs" data-toggle="modal" data-target="#modal-delete{{ $item->id }}"><i class="fa fa-trash-o"></i></a>
                                 </td>
-                                @include('frontend.shops.modals.edit')
-                                @include('frontend.shops.modals.delete')
+                                @include('frontend.categories.modals.edit')
+                                @include('frontend.categories.modals.delete')
                             </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -60,4 +56,5 @@
         </div>
     </div>
 </section>
+@include('frontend.categories.modals.create')
 @endsection
