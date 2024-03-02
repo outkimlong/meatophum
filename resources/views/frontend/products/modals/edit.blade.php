@@ -11,10 +11,29 @@
                 </div>
                 <div class="modal-body form-horizontal">
                     <div class="box-body">
+                        <div class="form-group has-feedback">
+                            <label for="category_id" class="col-sm-2 control-label">{{__('Category')}}</label>
+                            <div class="col-sm-10">
+                                <select class="form-control" name="category_id">
+                                    @foreach ($category as $item)
+                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group">
                             <label for="name" class="col-sm-2 control-label">{{__('Name')}}</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $item->name }}" >
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $item->name }}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="price" class="col-sm-2 control-label">{{__('Price')}}</label>
+                            <div class="col-sm-10">
+                                <div class="input-group">
+                                    <input type="text" class="form-control @error('price') is-invalid @enderror" value="{{ $item->price }}" name="price">
+                                    <span class="input-group-addon">$</span>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group has-feedback">
@@ -24,6 +43,12 @@
                                     <option value="0" {{ $item->active == 0 ? 'selected' : '' }}>{{__('admin.deactive')}}</option>
                                     <option value="1" {{ $item->active == 1 ? 'selected' : '' }}>{{__('admin.active')}}</option>
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="image" class="col-sm-2 control-label">{{__('Image')}}</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="dropify" name="image" data-default-file="{{asset('storage/'.$item->image)}}"/>
                             </div>
                         </div>
                     </div>

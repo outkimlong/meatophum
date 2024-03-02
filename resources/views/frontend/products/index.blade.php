@@ -17,6 +17,7 @@
                         {{ __('Add New') }}
                     </a>
                 </div>
+                
                 <div class="box-body">
                     <table class="display dataTable" style="width:100%">
                         <thead>
@@ -35,7 +36,12 @@
                             @foreach ($data as $index => $item)
                             <tr>
                                 <td>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</td>
-                                <td>{{ $item->image }}</td>
+                                <td>
+                                    <div>
+                                        <img src="{{asset('storage/'.$item->image)}}" alt="Shop Image" height="50px" width="50px">
+                                    </div>
+                                </td>
+
                                 <td>{{ $item->category->name }}</td>
                                 <td>{{ $item->name }}</td>
                                 <td>{{ $item->price }}</td>

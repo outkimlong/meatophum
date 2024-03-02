@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use App\Models\Category;
 use App\Models\Product;
 
 class ProductController extends Controller
@@ -14,8 +15,9 @@ class ProductController extends Controller
 
     public function index()
     {
-        $data = Product::orderBy('id', 'desc')->paginate(10);
-        return view('frontend.products.index', compact('data'));
+        $category = Category::orderBy('id', 'desc')->where('active', '=', 1)->get();
+        $data = Product::with('category')->get();
+        return view('frontend.products.index', compact('data', 'category'));
     }
 
     public function create()
@@ -32,6 +34,7 @@ class ProductController extends Controller
             'price' => 'nullable|string',
             'active' => 'required|boolean',
         ]);
+
         if ($validator->fails())
         {
             return response(['errors'=>$validator->errors()->all()], 422);
@@ -45,9 +48,9 @@ class ProductController extends Controller
             $product->active = $request->get('active');
             $product->image = $path;
             if ($product->save()) {
-                return redirect()->route('shops.index')->with('success','Product created successfully');
+                return redirect()->route('products.index')->with('success','Product created successfully');
             } else {
-                return redirect()->route('shops.index')->with('error','Something wrong');
+                return redirect()->route('products.index')->with('error','Something wrong');
             }
         }
     }
