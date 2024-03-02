@@ -19,7 +19,7 @@
                     <div class="box-body">
                         <table class="display dataTable" style="width:100%">
                             <thead>
-                                <tr>
+                                <tr  class="text-center">
                                     <th>Nº</th>
                                     <th>Username</th>
                                     <th>Email</th>

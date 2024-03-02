@@ -15,9 +15,9 @@ class ProductController extends Controller
 
     public function index()
     {
-        $category = Category::orderBy('id', 'desc')->where('active', '=', 1)->get();
-        $data = Product::with('category')->get();
-        return view('frontend.products.index', compact('data', 'category'));
+        $categories = Category::orderBy('id', 'desc')->where('active', '=', 1)->get();
+        $data = Product::orderBy('id', 'desc')->paginate(10);
+        return view('frontend.products.index', compact('data', 'categories'));
     }
 
     public function create()

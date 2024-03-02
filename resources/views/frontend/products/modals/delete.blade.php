@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="modal-delete{{$item->id}}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <form action="{{ route('products.destroy', $item->id) }}" method="post" enctype="multipart/form-data">

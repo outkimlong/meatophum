@@ -15,8 +15,8 @@
                             <label for="category_id" class="col-sm-2 control-label">{{__('Category')}}</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="category_id">
-                                    @foreach ($category as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

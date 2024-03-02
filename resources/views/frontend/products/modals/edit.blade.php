@@ -7,7 +7,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="modal-title">{{__('Update Category')}}</h5>
+                    <h5 class="modal-title">{{__('Update Product')}}</h5>
                 </div>
                 <div class="modal-body form-horizontal">
                     <div class="box-body">
@@ -15,8 +15,9 @@
                             <label for="category_id" class="col-sm-2 control-label">{{__('Category')}}</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="category_id">
-                                    @foreach ($category as $item)
-                                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                                    @foreach ($categories as $category)
+                                  
+                                        <option value="{{ $category->id }}" {{ $category->id == $item->category_id ? 'selected' : '' }}>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>

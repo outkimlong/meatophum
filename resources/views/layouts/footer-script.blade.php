@@ -16,7 +16,7 @@
 <script src="{{ asset('plugins/input-mask/jquery.inputmask.extensions.js') }}"></script>
 
 <script src="{{ asset('dist/js/dropify.min.js')}}"></script>
-<script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>  
+<script src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>  
 <script>
     $(function () {
         $('input').iCheck({
