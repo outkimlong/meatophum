@@ -10,13 +10,13 @@
         <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
                 <li class="dropdown messages-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="/">
                         <i class="fa fa-laptop"> </i>
                     </a>
                 </li>
                 <li class="dropdown messages-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <i class="fa  fa-flag-o"></i>
+                        <i class="fa fa-flag-o"></i>
                     </a>
                     <ul class="dropdown-menu">
                         <li>
